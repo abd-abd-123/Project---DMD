@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.kotlin_dmd_pro"
+    namespace = "com.example.attemptdmd"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.kotlin_dmd_pro"
-        minSdk = 21
+        applicationId = "com.example.attemptdmd"
+        minSdk = 23
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
