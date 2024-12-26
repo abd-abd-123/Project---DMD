@@ -8,7 +8,11 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryVariant">#3700B3</color>
     <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="onPrimary">#FFFFFF</color>
 
+    <color name="primary">#6200EE</color>
+    <color name="primaryVariant">#3700B3</color>
+    <color name="background">#FFFFFF</color>
     <!-- Secondary brand color -->
     <color name="colorSecondary">#03DAC5</color>
     <color name="colorSecondaryVariant">#018786</color>
@@ -16,7 +20,10 @@
 
     <!-- Other colors -->
     <color name="white">#FFFFFF</color>
+    <color name="red">#FF0000</color>
+
     <color name="black">#000000</color>
     <color name="lightGray">#DDDDDD</color>
     <color name="darkGray">#888888</color>
+
 </resources>
