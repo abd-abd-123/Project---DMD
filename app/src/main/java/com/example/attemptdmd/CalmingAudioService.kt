@@ -13,7 +13,6 @@ import androidx.core.app.NotificationCompat
 
 class CalmingAudioService : Service() {
 
-    // Notification constants
     private val CHANNEL_ID = "CalmingAudioChannel"
     private val NOTIF_ID = 123
 
@@ -24,31 +23,25 @@ class CalmingAudioService : Service() {
         Log.d("CalmingAudioService", "onCreate() called")
         createNotificationChannel()
 
-        // Initialize MediaPlayer with your raw resource
-        // R.raw.calming_music is your file name in /res/raw/
         mediaPlayer = MediaPlayer.create(this, R.raw.calming_music).apply {
-            isLooping = true // Loop the audio if you want continuous playback
+            isLooping = true
         }
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Log.d("CalmingAudioService", "onStartCommand() called")
 
-        // Build the notification to show while playing
         val notification: Notification = NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle("Calming Audio")
             .setContentText("Playing soothing background music...")
-            .setSmallIcon(R.drawable.ic_send) // or another drawable you have
-            .setOngoing(true) // Mark as an ongoing notification
+            .setSmallIcon(R.drawable.ic_send)
+            .setOngoing(true)
             .build()
 
-        // Start foreground service
+        // Foreground Service
         startForeground(NOTIF_ID, notification)
-
-        // Start playing audio if not already playing
         mediaPlayer?.start()
 
-        // If the service is killed, we want to restart (or can choose otherwise)
         return START_STICKY
     }
 
@@ -56,13 +49,11 @@ class CalmingAudioService : Service() {
         super.onDestroy()
         Log.d("CalmingAudioService", "onDestroy() called")
 
-        // Cleanup MediaPlayer
         mediaPlayer?.stop()
         mediaPlayer?.release()
         mediaPlayer = null
     }
 
-    // Foreground service must override onBind; return null if not a bound service
     override fun onBind(intent: Intent?): IBinder? = null
 
     private fun createNotificationChannel() {

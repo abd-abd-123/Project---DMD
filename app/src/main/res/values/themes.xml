@@ -1,25 +1,41 @@
 <!-- res/values/themes.xml -->
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
-    <!-- Dark Mode Theme -->
-    <style name="Theme.AttemptDMD.Dark" parent="Theme.Material3.Dark.NoActionBar">
-        <!-- Use your brand colors (can be the same or darker variants) -->
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryVariant">@color/primaryVariant</item>
-        <item name="colorOnPrimary">@color/onPrimary</item>
+    <!-- The default light theme -->
+    <style name="Theme.AttemptDMD" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorBubbleAssistant">@color/bubbleAssistantLight</item>
+        <item name="colorBubbleUser">@color/bubbleUserLight</item>
+        <item name="colorPrimary">@color/colorPrimaryLight</item>
+        <item name="colorOnPrimary">@color/colorOnPrimaryLight</item>
+        <item name="colorSecondary">@color/colorSecondaryLight</item>
 
-        <!-- Typical dark background -->
-        <item name="android:windowBackground">@android:color/background_dark</item>
+        <!-- Background for activity windows -->
+        <item name="android:windowBackground">@color/colorBackgroundLight</item>
+
+        <!-- NEW: Surfaces and On-Surface text for Light mode -->
+        <item name="colorSurface">@color/colorBackgroundLight</item>
+        <item name="colorOnSurface">@color/colorOnBackgroundLight</item>
+
     </style>
 
-    <!-- Light Mode Theme -->
-    <style name="Theme.AttemptDMD.Light" parent="Theme.Material3.Light.NoActionBar">
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryVariant">@color/primaryVariant</item>
-        <item name="colorOnPrimary">@color/onPrimary</item>
+    <!-- Keep alias to Theme.AttemptDMD.Light if you want -->
+    <style name="Theme.AttemptDMD.Light" parent="Theme.AttemptDMD"/>
 
-        <!-- Typical light background -->
-        <item name="android:windowBackground">@android:color/background_light</item>
+    <!-- The dark theme -->
+    <style name="Theme.AttemptDMD.Dark" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorBubbleAssistant">@color/bubbleAssistantDark</item>
+        <item name="colorBubbleUser">@color/bubbleUserDark</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/colorOnPrimaryDark</item>
+        <item name="colorSecondary">@color/colorSecondaryDark</item>
+
+        <!-- Dark window background -->
+        <item name="android:windowBackground">@color/colorBackgroundDark</item>
+
+        <!-- NEW: Surfaces and On-Surface text for Dark mode -->
+        <item name="colorSurface">@color/colorBackgroundDark</item>
+        <item name="colorOnSurface">@color/colorOnBackgroundDark</item>
+
     </style>
 
 </resources>

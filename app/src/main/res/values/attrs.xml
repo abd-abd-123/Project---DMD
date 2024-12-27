@@ -1,0 +1,5 @@
+<!-- res/values/attrs.xml -->
+<resources>
+    <attr name="colorBubbleAssistant" format="color" />
+    <attr name="colorBubbleUser" format="color" />
+</resources>

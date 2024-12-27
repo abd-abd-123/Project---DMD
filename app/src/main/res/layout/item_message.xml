@@ -20,14 +20,14 @@
             android:id="@+id/tvAssistantMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tvAssistantDisclaimer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/darkGray"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="12sp"
             android:layout_marginTop="4dp"/>
     </LinearLayout>
@@ -48,7 +48,7 @@
             android:id="@+id/tvUserMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="16sp" />
     </LinearLayout>
 </FrameLayout>

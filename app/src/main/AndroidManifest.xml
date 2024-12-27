@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.attemptdmd">
 
@@ -9,6 +10,7 @@
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- For media playback foreground service on Android 14+ -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
 
     <application
@@ -23,23 +25,31 @@
         android:theme="@style/Theme.AttemptDMD"
         tools:targetApi="34">
 
+        <!-- MAIN ACTIVITY: no toggles here anymore -->
         <activity
-            android:windowSoftInputMode="adjustResize"
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- Your BroadcastReceiver classes -->
+        <!-- NEW SETTINGS ACTIVITY -->
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="true" />
+
+        <!-- Receivers & Services -->
         <receiver android:name=".NotificationHelper" />
         <receiver android:name=".DailyNotificationReceiver" />
+
         <service
             android:name=".CalmingAudioService"
             android:exported="false"
             android:foregroundServiceType="mediaPlayback" />
+
     </application>
 
 </manifest>
