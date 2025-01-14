@@ -19,7 +19,6 @@ import android.view.MenuItem
 import com.google.android.material.appbar.MaterialToolbar
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var rvChatMessages: RecyclerView
     private lateinit var btnSendRequest: ImageButton
     private lateinit var etUserMessage: EditText
@@ -144,10 +143,10 @@ class MainActivity : AppCompatActivity() {
         thread {
             try {
                 val jsonRequest = JSONObject().apply {
-                    put("user_message", message)
+                    put("message", message)
                 }
 
-                val url = URL("https://flask-chatbot-3uw8.onrender.com/chat")
+                val url = URL("https://abd-dmd-server-a72a6febb9c5.herokuapp.com/chat")
                 val conn = url.openConnection() as HttpURLConnection
                 conn.requestMethod = "POST"
                 conn.doInput = true
@@ -159,7 +158,7 @@ class MainActivity : AppCompatActivity() {
                 if (conn.responseCode == HttpURLConnection.HTTP_OK) {
                     val response = conn.inputStream.bufferedReader().readText()
                     val jsonResponse = JSONObject(response)
-                    val assistantResponse = jsonResponse.optString("assistant", "No response")
+                    val assistantResponse = jsonResponse.optString("reply", "No response")
 
                     runOnUiThread {
                         chatAdapter.removeItem(ChatItem.Loading)
